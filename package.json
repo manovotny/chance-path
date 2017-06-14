@@ -1,0 +1,41 @@
+{
+  "name": "chance-path",
+  "description": "A Chance.js mixin to generate paths.",
+  "version": "0.0.0",
+  "author": {
+    "name": "Michael Novotny",
+    "email": "manovotny@gmail.com",
+    "url": "htts://manovotny.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manovotny/chance-path.git"
+  },
+  "keywords": [
+    "chance",
+    "generated",
+    "mixin",
+    "path",
+    "random"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "eslint . --ext .json --ext .js",
+    "unit": "jest"
+  },
+  "dependencies": {
+    "chance": "1.0.6"
+  },
+  "devDependencies": {
+    "eslint-config-get-off-my-lawn": "2.1.0",
+    "jest": "19.0.2",
+    "lodash.sample": "4.2.1"
+  }
+}
