@@ -27,15 +27,15 @@
     "src"
   ],
   "scripts": {
-    "test": "eslint . --ext .json --ext .js",
+    "lint": "eslint . --ext .json --ext .js",
+    "test": "npm run lint && npm run unit",
     "unit": "jest"
   },
   "dependencies": {
-    "chance": "1.0.6"
+    "chance": "1.0.9"
   },
   "devDependencies": {
     "eslint-config-get-off-my-lawn": "2.1.0",
-    "jest": "19.0.2",
-    "lodash.sample": "4.2.1"
+    "jest": "20.0.4"
   }
 }
