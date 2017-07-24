@@ -18,8 +18,6 @@ $ yarn add chance-path
 
 ## Usage
 
-By default, `chance-path` will return a randomly generated path, like `some/random/path/to/something/somewhere/some.file`
-
 ```js
 import Chance from 'chance';
 import path from 'chance-path';
@@ -33,6 +31,12 @@ chance.mixin({
 chance.path();
 ```
 
+By default, `chance-path` will return a randomly generated path.
+
+Example: `some/random/path/to/something/somewhere/some.file`
+
+### Options
+
 Below is a list of available configuration options that you can pass into `chance-path`.
 
 ```js
@@ -41,7 +45,7 @@ chance.path({
 });
 ```
 
-### depth
+#### depth
 
 Specifies how deep the path is.
 
@@ -49,7 +53,7 @@ For example, `chance.path({depth: 4})` would produce something like `path/depth/
 
 > Defaults to [`chance.d6()`](http://chancejs.com/#dice).
 
-### ext
+#### ext
 
 Specifies what the file extension is.
 
@@ -57,7 +61,7 @@ For example, `chance.path({ext: '.custom'})` would produce something like `rando
 
 > Defaults to [`chance.word()`](http://chancejs.com/#word).
 
-### name
+#### name
 
 Specifies what the file name is.
 
@@ -65,7 +69,7 @@ For example, `chance.path({name: 'custom'})` would produce something like `rando
 
 > Defaults to [`chance.word()`](http://chancejs.com/#word).
 
-### root
+#### root
 
 Specifies if the path should be a root path.
 
