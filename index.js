@@ -1,28 +1,18 @@
-const getBase = (name, ext) => {
-    let base = '';
+const Chance = require('chance');
 
-    if (name) {
-        base += name;
-    }
+const chance = new Chance();
 
-    if (ext) {
-        if (!ext.startsWith('.')) {
-            base += '.';
-        }
+module.exports = ({
+    depth = chance.d6(),
+    ext = `.${chance.word()}`,
+    name = chance.word(),
+    root = chance.bool()
+} = {}) => {
+    const path = chance.n(chance.word, depth);
+    const extension = ext.startsWith('.') ? ext : `.${ext}`;
+    const base = name + extension;
 
-        base += ext;
-    }
-
-    return base;
-};
-
-module.exports = ({depth = chance.d6(), ext = `.${chance.word()}`, name = chance.word(), root = chance.bool()} = {}) => { // eslint-disable-line no-undef
-    const path = chance.n(chance.word, depth); // eslint-disable-line no-undef
-    const base = getBase(name, ext);
-
-    if (base) {
-        path.push(base);
-    }
+    path.push(base);
 
     if (root) {
         path.unshift('');

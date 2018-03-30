@@ -20,22 +20,41 @@
     "random"
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=8.0.0",
+    "yarn": ">=1.0.0"
   },
   "main": "index.js",
   "files": [
-    "src"
+    "index.js"
   ],
   "scripts": {
+    "coverage": "jest --coverage",
     "lint": "eslint . --ext .json --ext .js",
-    "test": "npm run lint && npm run unit",
+    "precommit": "npm run prettier",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.{js,json,md}\" \"!package.json\"",
+    "test": "npm run lint && npm run coverage",
     "unit": "jest"
   },
   "dependencies": {
-    "chance": "1.0.9"
+    "chance": "1.0.13"
   },
   "devDependencies": {
-    "eslint-config-get-off-my-lawn": "2.1.0",
-    "jest": "20.0.4"
+    "eslint": "4.19.1",
+    "eslint-config-get-off-my-lawn": "3.0.1",
+    "eslint-config-prettier": "2.9.0",
+    "husky": "0.14.3",
+    "jest": "22.4.3",
+    "prettier": "1.11.1"
+  },
+  "jest": {
+    "coverageDirectory": ".jest-coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   }
 }
