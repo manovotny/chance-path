@@ -1,7 +1,7 @@
 {
   "name": "chance-path",
   "description": "A Chance.js mixin to generate paths.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Michael Novotny",
     "email": "manovotny@gmail.com",
