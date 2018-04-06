@@ -30,8 +30,9 @@
   "scripts": {
     "coverage": "jest --coverage",
     "lint": "eslint . --ext .json --ext .js",
-    "precommit": "npm run prettier",
-    "prettier": "pretty-quick --staged",
+    "precommit": "npm run pretty-quick",
+    "prettier": "prettier --write \"**/*.{js,json,md}\"",
+    "pretty-quick": "pretty-quick --staged",
     "test": "npm run lint && npm run coverage",
     "unit": "jest"
   },
