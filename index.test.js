@@ -2,7 +2,7 @@ const {isAbsolute, parse} = require('path');
 
 const Chance = require('chance');
 
-const path = require('../index');
+const path = require('./index');
 
 const chance = new Chance();
 const pool = 'abcd';
