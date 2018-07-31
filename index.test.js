@@ -24,7 +24,7 @@ beforeEach(() => {
 });
 
 describe('depth', () => {
-    it('default', () => {
+    test('default', () => {
         const result = chance.path();
         const parsed = parse(result);
         const parts = parsed.dir.split('/');
@@ -33,7 +33,7 @@ describe('depth', () => {
         expect(depth).toEqual(d6);
     });
 
-    it('custom', () => {
+    test('custom', () => {
         const d8 = chance.d8();
         const result = chance.path({depth: d8});
         const parsed = parse(result);
@@ -45,14 +45,14 @@ describe('depth', () => {
 });
 
 describe('ext', () => {
-    it('default', () => {
+    test('default', () => {
         const result = chance.path();
         const parsed = parse(result);
 
         expect(parsed.ext).toEqual(`.${word}`);
     });
 
-    it('custom', () => {
+    test('custom', () => {
         const ext = `.${chance.string({pool})}`;
         const result = chance.path({ext});
         const parsed = parse(result);
@@ -60,7 +60,7 @@ describe('ext', () => {
         expect(parsed.ext).toEqual(ext);
     });
 
-    it('custom ext without leading `.`', () => {
+    test('custom ext without leading `.`', () => {
         const ext = chance.string({pool});
         const result = chance.path({ext});
         const parsed = parse(result);
@@ -70,14 +70,14 @@ describe('ext', () => {
 });
 
 describe('name', () => {
-    it('default', () => {
+    test('default', () => {
         const result = chance.path();
         const parsed = parse(result);
 
         expect(parsed.name).toEqual(word);
     });
 
-    it('custom', () => {
+    test('custom', () => {
         const name = `.${chance.string({pool})}`;
         const result = chance.path({name});
         const parsed = parse(result);
@@ -87,20 +87,20 @@ describe('name', () => {
 });
 
 describe('root', () => {
-    it('default', () => {
+    test('default', () => {
         const result = chance.path();
 
         expect(isAbsolute(result)).toEqual(bool);
     });
 
-    it('custom true', () => {
+    test('custom true', () => {
         const root = true;
         const result = chance.path({root});
 
         expect(isAbsolute(result)).toEqual(root);
     });
 
-    it('custom false', () => {
+    test('custom false', () => {
         const root = false;
         const result = chance.path({root});
 
