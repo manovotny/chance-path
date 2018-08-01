@@ -24,9 +24,6 @@
     "yarn": ">=1.0.0"
   },
   "main": "index.js",
-  "files": [
-    "index.js"
-  ],
   "scripts": {
     "coverage": "jest --coverage",
     "lint": "eslint . --ext .json --ext .js",
