@@ -1,4 +1,4 @@
-# chance-path [![Build Status](https://travis-ci.org/manovotny/chance-path.svg?branch=master)](https://travis-ci.org/manovotny/chance-path)
+# chance-path
 
 > A [Chance.js mixin](http://chancejs.com/#mixin) to generate paths.
 
